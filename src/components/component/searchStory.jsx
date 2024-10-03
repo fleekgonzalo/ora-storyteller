@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import Image from next/image;
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Web3 } from "web3";
@@ -37,6 +38,7 @@ const SearchStory = () => {
       const estimateFee = await web3.ora.estimateFee(MODEL);
       const accounts = await web3.eth.requestAccounts();
       const receipt = await web3.ora.calculateAIResult(accounts[0], MODEL, fullPrompt, estimateFee);
+      console.log(receipt.transactionHash);
       setResponse("Transaction sent. Please wait 30 seconds before fetching the result...");
       setWaiting(true);
       setLoading(false);
@@ -51,6 +53,7 @@ const SearchStory = () => {
   const fetchResult = async () => {
     setLoading(true);
     try {
+      // var prompt = "a goat and a cow"
       const result = await web3.ora.getAIResult(MODEL, currentPrompt);
       setResponse(result);
       setStories([result, ...stories]);
@@ -108,7 +111,7 @@ const SearchStory = () => {
               </div>
             </div>
             <div className="relative">
-              <img
+              <Image
                 src="/enchanted-forest.jpg"
                 width={600}
                 height={600}

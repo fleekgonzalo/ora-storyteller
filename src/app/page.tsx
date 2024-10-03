@@ -1,7 +1,7 @@
 // import Image from "next/image";
 import SearchStory from "@/components/component/searchStory"
 
-export default function Home() {
+const Home = () => {
   return (
     <div
       style={{
@@ -15,3 +15,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home;

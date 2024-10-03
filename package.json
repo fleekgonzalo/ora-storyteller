@@ -1,5 +1,6 @@
 {
   "name": "ora-storyteller",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "scripts": {
