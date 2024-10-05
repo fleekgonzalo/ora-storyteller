@@ -131,15 +131,15 @@ const SearchStory = () => {
           </div>
         </div>
         {currentPrompt && (
-          <div className="mt-8">
-            <h2 className="text-2xl font-bold mb-4">Generated Story</h2>
+          <div className="mt-8 grid md:grid-cols-2 gap-4">
             <div className="bg-card rounded-2xl shadow-lg p-6">
+              <h2 className="text-2xl font-bold mb-4">{currentPrompt}</h2>
               <p>{response}</p>
             </div>
             <StoryImageGen prompt={currentPrompt} /> {/* Render the new component */}
           </div>
         )}
-        <History stories={stories} />
+        {/* <History stories={stories} /> */}
       </div>
     </div>
   );
