@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Web3 } from "web3";
 import { ORAPlugin, Chain, Models } from "@ora-io/web3-plugin-ora";
 import History from './History';
+import StoryImageGen from './genImage'; // Import the new component
 
 const MODEL = Models.LLAMA2;
 
@@ -16,7 +17,7 @@ const SearchStory = () => {
   const [response, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
   const [waiting, setWaiting] = useState(false);
-  const [countdown, setCountdown] = useState(30);
+  const [countdown, setCountdown] = useState(20);
   const [web3, setWeb3] = useState(null);
 
   useEffect(() => {
@@ -53,7 +54,6 @@ const SearchStory = () => {
   const fetchResult = async () => {
     setLoading(true);
     try {
-      // var prompt = "a goat and a cow"
       const result = await web3.ora.getAIResult(MODEL, currentPrompt);
       setResponse(result);
       setStories([result, ...stories]);
@@ -136,6 +136,7 @@ const SearchStory = () => {
             <div className="bg-card rounded-2xl shadow-lg p-6">
               <p>{response}</p>
             </div>
+            <StoryImageGen prompt={currentPrompt} /> {/* Render the new component */}
           </div>
         )}
         <History stories={stories} />

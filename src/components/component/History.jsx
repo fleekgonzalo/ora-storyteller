@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { STORY_MODEL } from "./generateStory";
+// import { STORY_MODEL } from "./generateStory";
 import Web3 from "web3";
-import { ORAPlugin, Chain } from "@ora-io/web3-plugin-ora";
+import { ORAPlugin, Chain, Models } from "@ora-io/web3-plugin-ora";
 
 const History = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -11,6 +11,8 @@ const History = () => {
   const [web3, setWeb3] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  const STORY_MODEL = Models.LLAMA2;
 
   useEffect(() => {
     const initializeWeb3 = async () => {
