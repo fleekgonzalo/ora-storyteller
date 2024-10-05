@@ -107,7 +107,7 @@ export default function StoryImageGen({ prompt }) {
       {error && <p className="text-red-500">{error}</p>}
       {imageUrl && (
         <div className="mt-4">
-          <image src={imageUrl} alt="Generated AI" className="max-w-full h-auto rounded" />
+          <Image src={imageUrl} alt="Generated AI" className="max-w-full h-auto rounded" />
         </div>
       )}
     </div>
