@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Web3 } from "web3";
 import { ORAPlugin, Chain, Models } from "@ora-io/web3-plugin-ora";
-import History from './History';
+//import History from './History';
 import StoryImageGen from './genImage'; // Import the new component
 
 const MODEL = Models.LLAMA2;
