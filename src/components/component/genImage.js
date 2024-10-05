@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Web3 } from "web3";
 import { ORAPlugin, Chain, Models } from "@ora-io/web3-plugin-ora";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function StoryImageGen({ prompt }) {
   const [imageUrl, setImageUrl] = useState(null);
@@ -106,7 +107,7 @@ export default function StoryImageGen({ prompt }) {
       {error && <p className="text-red-500">{error}</p>}
       {imageUrl && (
         <div className="mt-4">
-          <img src={imageUrl} alt="Generated AI" className="max-w-full h-auto rounded" />
+          <image src={imageUrl} alt="Generated AI" className="max-w-full h-auto rounded" />
         </div>
       )}
     </div>
