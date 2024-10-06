@@ -1,10 +1,11 @@
-// @ts-check
- 
-/**
- * @type {import('next').NextConfig}
- */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
- distDir: 'build',
-}
- 
-export default nextConfig
+  output: 'export',
+  reactStrictMode: true,
+  images: {
+    unoptimized: true,
+  },
+  trailingSlash: true,
+};
+
+module.exports = nextConfig;
