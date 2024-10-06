@@ -8,4 +8,4 @@ const nextConfig = {
   trailingSlash: true,
 };
 
-module.exports = nextConfig;
+export default nextConfig;
